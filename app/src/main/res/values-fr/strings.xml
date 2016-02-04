@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">BeTrains Shortcuts</string>
+    <string name="title_station">Gare</string>
+    <string name="title_station_short">Nom du raccourci</string>
+    <string name="title_train_short">Nom du raccourci</string>
+    <string name="title_train">Train</string>
+    <string name="hint_station">Choisissez une gare</string>
+    <string name="hint_station_short">Nom affiché sous l\'icône</string>
+    <string name="hint_train_short">Nom affiché sous l\'icône</string>
+    <string name="hint_train">Entrez votre numéro de train</string>
+    <string name="error_station">Gare invalide</string>
+    <string name="lan">fr</string>
+    <string name="txt_no_result">Désolé, pas de résultats</string>
+    <string name="txt_connection">Vérifiez votre connexion internet</string>
+    <string name="error_select">Choisissez une gare d\'abord</string>
+    <string name="ok">OK</string>
+    <string name="report">Rapport</string>
+    <string name="irailissue">Problème serveur</string>
+    <string name="irailissueDetail">Nous sommes désolé pour cette erreur, mais vous pouvez nous envoyer un rapport d\'erreur par e-mail pour nous aider à corriger.</string>
+
+</resources>

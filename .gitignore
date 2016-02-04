@@ -37,3 +37,4 @@ Thumbs.db
 
 # Intellij IDEA 
 .idea/*
+app/app.iml

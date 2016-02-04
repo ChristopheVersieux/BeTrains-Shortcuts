@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">BeTrains Shortcuts</string>
+    <string name="title_station">Station</string>
+    <string name="title_station_short">Display Name</string>
+    <string name="title_train_short">Display Name</string>
+    <string name="title_train">Train</string>
+    <string name="hint_station">Please select a station</string>
+    <string name="hint_station_short">Name under the icon</string>
+    <string name="hint_train_short">Name under the icon</string>
+    <string name="hint_train">Enter your train number</string>
+    <string name="error_station">Invalid station name</string>
+    <string name="lan">nl</string>
+    <string name="txt_no_result">Sorry, no results</string>
+    <string name="txt_connection">Please check your internet connection</string>
+    <string name="error_select">Please select a station first</string>
+    <string name="ok">OK</string>
+    <string name="report">Report to iRail</string>
+    <string name="irailissue">Problem with the server</string>
+    <string name="irailissueDetail">We have issues with the server, you can wait for us to fix it, or send more informations by email.\n\nWe are sorry for the inconvenience.</string>
+
+</resources>
