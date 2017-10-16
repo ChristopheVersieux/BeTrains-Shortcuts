@@ -43,6 +43,12 @@ public class LiveboardVehicleActivity extends AppCompatActivity {
         }).withResponse().setCallback(new FutureCallback<Response<Vehicle>>() {
             @Override
             public void onCompleted(Exception e, Response<Vehicle> result) {
+                if(result==null){
+                    AlertDialog.Builder builder = new AlertDialog.Builder(LiveboardVehicleActivity.this);
+                    builder.setMessage("Please send and email to christophe.versieux+betrains@gmail.com with a screenshot of this screen or this url:\n"+url)
+                            .setTitle("ERROR");
+                    builder.create().show();
+                }
                 Vehicle currentVehicle = result.getResult();
 
                 if (currentVehicle != null

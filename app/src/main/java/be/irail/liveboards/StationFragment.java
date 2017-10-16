@@ -8,6 +8,7 @@ import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -135,6 +136,9 @@ public class StationFragment extends Fragment {
                     .setCallback(new FutureCallback<StationLocationApi>() {
                         @Override
                         public void onCompleted(Exception e, StationLocationApi apiList) {
+                            if(apiList==null){
+                                return;
+                            }
                             if (e != null)
                                 Log.e("CVE", e.getLocalizedMessage());
                             else if (apiList != null && apiList.station != null) {
