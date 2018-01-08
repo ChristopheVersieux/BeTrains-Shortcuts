@@ -69,6 +69,12 @@ public class LiveboardVehicleActivity extends AppCompatActivity {
                         LiveboardVehicleActivity.this.finish();
                     } else {
                         if (result.getHeaders().code() == 502) {
+
+                            AlertDialog.Builder builder1 = new AlertDialog.Builder(LiveboardVehicleActivity.this);
+                            builder1.setMessage("Please send and email to christophe.versieux+betrains@gmail.com with a screenshot of this screen or this url:\n"+url)
+                                    .setTitle("ERROR");
+                            builder1.create().show();
+
                             AlertDialog.Builder builder = new AlertDialog.Builder(LiveboardVehicleActivity.this);
                             builder.setTitle(R.string.irailissue);
                             builder.setMessage(R.string.irailissueDetail);

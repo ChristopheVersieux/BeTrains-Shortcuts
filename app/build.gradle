@@ -1,14 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 27
     buildToolsVersion '26.0.1'
 
     defaultConfig {
         applicationId "be.irail.liveboards"
         minSdkVersion 14
-        targetSdkVersion 26
-        versionCode 17
+        targetSdkVersion 27
+        versionCode 19
         versionName "2.10"
     }
     buildTypes {
@@ -25,8 +25,9 @@ dependencies {
     compile('com.github.florent37:materialviewpager:1.1.3@aar') {
         transitive = true
     }
-    compile 'com.android.support:appcompat-v7:26.1.0'
+
     compile 'com.koushikdutta.ion:ion:2.2.1'
-    compile 'com.android.support:support-v4:26.1.0'
-    compile 'com.android.support:design:26.1.0'
+    compile 'com.android.support:support-v4:27.0.2'
+    compile 'com.android.support:design:27.0.2'
+    compile 'com.android.support:appcompat-v7:27.0.2'
 }

@@ -8,6 +8,9 @@ import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.pm.ShortcutInfoCompat;
+import android.support.v4.content.pm.ShortcutManagerCompat;
+import android.support.v4.graphics.drawable.IconCompat;
 import android.support.v7.app.AlertDialog;
 import android.text.format.DateUtils;
 import android.util.Log;
@@ -112,13 +115,21 @@ public class StationFragment extends Fragment {
         shortcutIntent.putExtra("Name", stationName);
         shortcutIntent.putExtra("ID", stationId);
         shortcutIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        Intent intent = new Intent();
+        /*Intent intent = new Intent();
         intent.putExtra(Intent.EXTRA_SHORTCUT_INTENT, shortcutIntent);
         intent.putExtra(Intent.EXTRA_SHORTCUT_NAME, editStation.getText().toString());
         intent.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, Intent.ShortcutIconResource.fromContext(getActivity(), R.mipmap.ic_launcher));
         intent.setAction("com.android.launcher.action.INSTALL_SHORTCUT");
         StationFragment.this.getActivity().sendBroadcast(intent);
-        getActivity().finish();
+        getActivity().finish();*/
+
+
+        ShortcutInfoCompat shortcut = new ShortcutInfoCompat.Builder(getContext(), editStation.getText().toString())
+                .setIntent(shortcutIntent)
+                .setShortLabel(editStation.getText().toString())
+                .setIcon(IconCompat.createWithResource(getContext(), R.mipmap.ic_launcher))
+                .build();
+        ShortcutManagerCompat.requestPinShortcut(getContext(), shortcut,null);
     }
 
     @Override

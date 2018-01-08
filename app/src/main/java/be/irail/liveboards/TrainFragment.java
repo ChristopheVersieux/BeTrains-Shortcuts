@@ -7,6 +7,9 @@ import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.pm.ShortcutInfoCompat;
+import android.support.v4.content.pm.ShortcutManagerCompat;
+import android.support.v4.graphics.drawable.IconCompat;
 import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -108,12 +111,22 @@ public class TrainFragment extends Fragment {
         Intent shortcutIntent = new Intent(TrainFragment.this.getContext(), LiveboardVehicleActivity.class);
         shortcutIntent.putExtra("Name", editTrain.getText().toString());
         shortcutIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        Intent intent = new Intent();
+        /*Intent intent = new Intent();
         intent.putExtra(Intent.EXTRA_SHORTCUT_INTENT, shortcutIntent);
         intent.putExtra(Intent.EXTRA_SHORTCUT_NAME, trainShort.getText().toString());
         intent.putExtra(Intent.EXTRA_SHORTCUT_ICON_RESOURCE, Intent.ShortcutIconResource.fromContext(getActivity(), R.mipmap.ic_launcher));
         intent.setAction("com.android.launcher.action.INSTALL_SHORTCUT");
-        TrainFragment.this.getActivity().sendBroadcast(intent);
+        TrainFragment.this.getActivity().sendBroadcast(intent);*/
+
+
+
+        ShortcutInfoCompat shortcut = new ShortcutInfoCompat.Builder(getContext(), trainShort.getText().toString())
+                .setIntent(shortcutIntent)
+                .setShortLabel(trainShort.getText().toString())
+                .setIcon(IconCompat.createWithResource(getContext(), R.mipmap.ic_launcher))
+                .build();
+        ShortcutManagerCompat.requestPinShortcut(getContext(), shortcut,null);
+
         getActivity().finish();
     }
 
